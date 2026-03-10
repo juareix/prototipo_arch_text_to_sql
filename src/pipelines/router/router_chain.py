@@ -14,10 +14,23 @@ class RouterChain:
             ("human", "{question}")
         ])
 
-        self.chain = (
-            self.prompt
-            | self.llm.with_structured_output(RouterDecision)
-        )
+        self.chain = self.prompt | self.llm
 
     def run(self, question: str) -> RouterDecision:
-        return self.chain.invoke({"question": question})
+        import json
+        from .schemas import RouterDecision
+        response = self.chain.invoke({"question": question})
+        # Extrai o JSON da resposta
+        try:
+            if isinstance(response, dict):
+                return RouterDecision(**response)
+            # Tenta encontrar o JSON na resposta textual
+            json_str = response
+            # Remove texto extra antes/depois do JSON
+            json_start = json_str.find('{')
+            json_end = json_str.rfind('}') + 1
+            json_str = json_str[json_start:json_end]
+            data = json.loads(json_str)
+            return RouterDecision(**data)
+        except Exception as e:
+            raise ValueError(f"Falha ao parsear resposta do LLM: {response}\nErro: {e}")

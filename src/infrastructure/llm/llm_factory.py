@@ -1,21 +1,23 @@
+from langchain_community.llms import Ollama
 import os
 from dotenv import load_dotenv
-from langchain_google_genai import ChatGoogleGenerativeAI
 
 _llm_cache = {}
 
 def get_llm(llm_type: str = "router"):
 	"""
-	Retorna uma instância do LLM configurada para o tipo solicitado.
-	Atualmente suporta apenas Gemini via langchain-google-genai.
+	Seleciona dinamicamente o provedor de LLM via .env e retorna a instância correspondente.
 	"""
-	if llm_type in _llm_cache:
-		return _llm_cache[llm_type]
-
 	load_dotenv()
-	api_key = os.getenv("GEMINY_KEY")
-	if not api_key:
-		raise ValueError("Chave da API Gemini não encontrada no .env (GEMINY-KEY)")
+	provider = os.getenv("LLM_PROVIDER", "gemini").lower()
+	if provider == "gemini":
+		from .gemini import get_gemini_llm
+		return get_gemini_llm()
+	elif provider == "ollama":
+		from .ollama import get_ollama_llm
+		return get_ollama_llm()
+	else:
+		raise ValueError(f"LLM_PROVIDER '{provider}' não suportado. Use 'gemini' ou 'ollama'.")
 
 	llm = ChatGoogleGenerativeAI(
 		model="gemini-3-flash-preview",

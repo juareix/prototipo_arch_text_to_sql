@@ -7,7 +7,6 @@ Categorias possíveis:
 
 - sql → perguntas que precisam consultar banco de dados estruturado
 - policy → perguntas sobre documentos, normas ou conteúdo textual
-- analytics → perguntas analíticas que pedem agregações, métricas ou comparações
 - smalltalk → conversas casuais ou cumprimentos
 
 Responda apenas no formato JSON:

@@ -1,1 +1,13 @@
 .env
+# ignorar todos os arquivos .pyc
+*.pyc
+# ignorar a pasta __pycache__
+__pycache__/
+# ignorar arquivos de log
+*.log
+# ignorar arquivos de banco de dados
+*.db
+*.sqlite
+# ignorar arquivos de configuração local
+*.env.local
+olist.sqlite
