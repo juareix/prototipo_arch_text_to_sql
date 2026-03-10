@@ -8,7 +8,7 @@ def get_gemini_llm():
     if not api_key:
         raise ValueError("Chave da API Gemini não encontrada no .env (GEMINY_KEY)")
     return ChatGoogleGenerativeAI(
-        model="gemini-pro",
+        model="gemini-3-flash-preview",
         google_api_key=api_key,
         temperature=0.0,
         convert_system_message_to_human=True,
