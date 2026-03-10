@@ -1,0 +1,514 @@
+{
+  "product_category_name_translation": [
+    {
+      "name": "product_category_name",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "product_category_name_english",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    }
+  ],
+  "sellers": [
+    {
+      "name": "seller_id",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "seller_zip_code_prefix",
+      "type": "INTEGER",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "seller_city",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "seller_state",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    }
+  ],
+  "customers": [
+    {
+      "name": "customer_id",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "customer_unique_id",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "customer_zip_code_prefix",
+      "type": "INTEGER",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "customer_city",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "customer_state",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    }
+  ],
+  "geolocation": [
+    {
+      "name": "geolocation_zip_code_prefix",
+      "type": "INTEGER",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "geolocation_lat",
+      "type": "REAL",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "geolocation_lng",
+      "type": "REAL",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "geolocation_city",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "geolocation_state",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    }
+  ],
+  "order_items": [
+    {
+      "name": "order_id",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "order_item_id",
+      "type": "INTEGER",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "product_id",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "seller_id",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "shipping_limit_date",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "price",
+      "type": "REAL",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "freight_value",
+      "type": "REAL",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    }
+  ],
+  "order_payments": [
+    {
+      "name": "order_id",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "payment_sequential",
+      "type": "INTEGER",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "payment_type",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "payment_installments",
+      "type": "INTEGER",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "payment_value",
+      "type": "REAL",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    }
+  ],
+  "order_reviews": [
+    {
+      "name": "review_id",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "order_id",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "review_score",
+      "type": "INTEGER",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "review_comment_title",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "review_comment_message",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "review_creation_date",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "review_answer_timestamp",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    }
+  ],
+  "orders": [
+    {
+      "name": "order_id",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "customer_id",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "order_status",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "order_purchase_timestamp",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "order_approved_at",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "order_delivered_carrier_date",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "order_delivered_customer_date",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "order_estimated_delivery_date",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    }
+  ],
+  "products": [
+    {
+      "name": "product_id",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "product_category_name",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "product_name_lenght",
+      "type": "REAL",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "product_description_lenght",
+      "type": "REAL",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "product_photos_qty",
+      "type": "REAL",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "product_weight_g",
+      "type": "REAL",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "product_length_cm",
+      "type": "REAL",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "product_height_cm",
+      "type": "REAL",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "product_width_cm",
+      "type": "REAL",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    }
+  ],
+  "leads_qualified": [
+    {
+      "name": "mql_id",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "first_contact_date",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "landing_page_id",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "origin",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    }
+  ],
+  "leads_closed": [
+    {
+      "name": "mql_id",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "seller_id",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "sdr_id",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "sr_id",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "won_date",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "business_segment",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "lead_type",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "lead_behaviour_profile",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "has_company",
+      "type": "INTEGER",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "has_gtin",
+      "type": "INTEGER",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "average_stock",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "business_type",
+      "type": "TEXT",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "declared_product_catalog_size",
+      "type": "REAL",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    },
+    {
+      "name": "declared_monthly_revenue",
+      "type": "REAL",
+      "notnull": false,
+      "default": null,
+      "pk": false
+    }
+  ]
+}

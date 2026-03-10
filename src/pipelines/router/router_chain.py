@@ -24,8 +24,11 @@ class RouterChain:
         try:
             if isinstance(response, dict):
                 return RouterDecision(**response)
-            # Tenta encontrar o JSON na resposta textual
-            json_str = response
+            # Extrai o texto do AIMessage
+            if hasattr(response, 'content') and isinstance(response.content, list):
+                json_str = response.content[0]['text']
+            else:
+                json_str = str(response)
             # Remove texto extra antes/depois do JSON
             json_start = json_str.find('{')
             json_end = json_str.rfind('}') + 1
